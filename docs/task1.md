@@ -14,14 +14,14 @@ Into this something more compelling for the eyes like this:
 
 ![react version](resources/react-page.png)
 
-Basically instead of one loooong page we'll have menu with icons at the top and dynamic site that can update its content based on the state of the menu.
+Basically instead of one loooong page we'll have menu with icons at the top and a dynamic site that can update its content based on the state of the menu.
 
 ---
 
 ## Let's get on with it...
 
 
-First, I need you to understand some subtle differences between HTML & JSX syntax. We've [already said](./intro.md) that JSX is basically _Javascript that let's you write HTML in it_<sub>[1](#notes)</sub>. But because Javscript is a language itself, it has different [reserved words](https://en.wikipedia.org/wiki/Reserved_word) than HTML. So the following code would not compile.
+First, I need you to understand some subtle differences between HTML & JSX syntax. We've [already said](./intro.md) that JSX is basically _Javascript that let's you write HTML in it_<sub>[1](#notes)</sub>. But because Javascript is a language itself, it has different [reserved words](https://en.wikipedia.org/wiki/Reserved_word) than HTML. So the following code would not compile.
 
 ```jsx
 <div class="heading">Hello World</div>
@@ -45,13 +45,13 @@ import React from 'react'; // we need to import React whenever we want to use JS
 // we need to export our function / component so we can import it somewhere else, we export it under the default 
 export default function Home() {
   return (
-    <article id="home" class="panel intro">
+    <article id="home" className="panel intro">
       <header>
         <h1>Jane Doe</h1>
         <p>Senior Stellar Projectionist</p>
       </header>
-      <a href="#work" class="jumplink pic">
-        <span class="arrow icon solid fa-chevron-right">
+      <a href="#work" className="jumplink pic">
+        <span className="arrow icon solid fa-chevron-right">
           <span>See my work</span>
         </span>
         <img src="..." alt="" />
