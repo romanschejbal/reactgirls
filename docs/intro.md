@@ -1,8 +1,8 @@
-# What is React and why do we like it? (WORK IN PROGRESS)
+# What is React and why do we like it?
 
 Hello! Let me guess, you are here because you've made something beautiful using static HTML & CSS and now you want to turn your site/app into a dynamic and interactive one, right?
 
-> From now on, we assume you are familiar with HTML & CSS because those are the foundation of web development. Reason is, it could get too confusing without knowing these first.
+> From now on, we assume you are familiar with HTML & CSS because those are the foundation of web development. Reason is, it could get too confusing without knowing these first. Actually, this whole page might still be confusing to you, but hang in there, I promise it will eventually make sense and I'll do my best explaining it to you.
 
 ## What is React then?
 
@@ -99,9 +99,9 @@ This is how it looks like:
 
 In fact, this code compiles into exactly the same code as we saw previously above. You can see it for yourself [here](https://babeljs.io/repl#?browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwWQhglgdgMmUBMAEB7ADgUygXgN4BcAnAVwwF8A-AKCSWAAkViBnDJAM0JSnwBEUUhAPKYcBEuSQB6arWABxMITABzNgBsIKgBb5mQsezDrWZadWBTw0OIgpA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=true&targets=&version=7.8.7&externalPlugins=).
 
-JSX basically translates into function calls of `React.createElement`, so React can do some more things with it while our application is being rendered.
+JSX basically translates into function calls of `React.createElement`, so __React can do some more things with it__ while our application is being rendered.
 
-This way, JSX is more powerful than HTML because the underlying abstraction is "scheduled functions", but we actually call them __"Components"__. And this is the main principle of React. And do you remember I said you came here from the "static HTML" land? Well, components are dynamic, they can have state and something called React scheduler knows when to rerender, remove or add them to the DOM whenever the state changes. This is a big deal.
+This way, JSX is more powerful than HTML because the underlying abstraction is "scheduled functions" (we actually call them __"Components"__). And this is the main principle of React. And do you remember I said you came here from the "static HTML" land? Well, components are dynamic, they can have state and something called React scheduler knows when to rerender, remove or add them to the DOM whenever the state changes. This is a big deal.
 
 _Description from the official React documentation:_
 > Components are often described as “just functions” but in our view they need to be more than that to be useful. In React, components describe any composable behavior, and this includes rendering, lifecycle, and state. Some external libraries like Relay augment components with other responsibilities such as describing data dependencies. It is possible that those ideas might make it back into React too in some form.
@@ -129,7 +129,7 @@ _assignment no. x_
         <button id="submit" disabled="disabled">Login</button>
     </form>
     
-    <script type="javascript>
+    <script type="javascript">
         const usernameElementId = "username";
         const passwordElementId = "password";
 
@@ -153,16 +153,16 @@ _assignment no. x_
 </html>
 ```
 
-Without me telling you what the code does, we can already notice a few things:
+Without me telling you what the code does (that's your job to figure out), we can already notice a few things:
 1. It is vanilla Javascript without any frameworks or abstractions.
-1. This code is very imperative and imperative code is very prone to bugs and fragile to modifications.
+1. This code is very __imperative__ and imperative code is very prone to bugs and fragile to modifications.
 1. The behaviour is separated from the ui description, if we modify one side of it, we probably need to update the other one, too.
 1. It does not cleanup after the form is unmounted. Leaving listeners hanging and creating a memory leak.
 1. We have to manually manipulate the DOM whenever we want to change something.
 
 It's worth noting that even if we used jQuery, the code would have the same flaws.
 
-## React Login App
+## React
 
 Now, let's look at the same example but using React with the least amount of abstractions.
 
@@ -221,8 +221,10 @@ Here's what's happening:
 1. We define a component named `Login` where we define the state, behaviour and the UI representation all together.
 1. We render the `Login` component into the div we created, so React will start its scheduler and keep track of any changes in that subtree.
 1. If we would unmount our component (not part of the code) with `ReactDOM.unmountComponentAtNode(document.getElementById("app"))`, React would cleanup all the attached listeners it has created automatically.
-1. The code is declarative and easier to reason about. _(This may not look like so since you may not be very familiar with the React API just yet.)_
+1. The code is __declarative__ and easier to reason about. _(Declarative code is easier to understand thus we prefer declarative code over imperative. In fact, what is very common in React, is to wrap some imperative code with declarative component(s) - we will see an example of this at the end of the webinar.)_
 
-And this is it, this is React. :) I like to think of React as a "Lego for adults". Once you have the building blocks, it's very easy and fast to create application of any scale with it.
+And this is it, this is React. I mean, there's more to it, but let's not put too much on our plate at the beginning. I like to think of React as "Lego for adults". Once you have the building blocks, it's very easy and fast to create application of any scale with it.
 
-(Test will follow)
+If there is anything that doesn't make sense to you, please don't be afraid to ask questions.
+
+Now go and try to fill out the test in the Goole Classroom.

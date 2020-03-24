@@ -1,3 +1,3 @@
 # ReactGirls webinar
 
-Start [here](./INTRO.md).
+Start [here](./docs/intro.md).
