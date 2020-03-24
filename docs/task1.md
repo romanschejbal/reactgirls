@@ -16,6 +16,8 @@ Into this something more compelling for the eyes like this:
 
 Basically instead of one loooong page we'll have menu with icons at the top and dynamic site that can update its content based on the state of the menu.
 
+---
+
 ## Let's get on with it...
 
 
@@ -33,7 +35,7 @@ Can you tell why? Well, the reason why this wouldn't compile is that `class` is 
 
 With this knowledge, you can now head to the project at [Code Sandbox](#link-goes-here) and start converting parts from the `public/index.html` file into React components. You should think through how you want to divide them, what is the granularity going to be like and so on. But don't worry, you can update and iterate on it while doing so. I have marked the code you need to convert with html comments `<!-- THIS IS THE CODE YOU WANT TO CONVERT INTO REACT -->` and `<!-- DONT REMOVE THE CLOSING BODY & HTML TAGS -->`
 
-Here's a quick hint for you:
+### Here's a quick hint for you:
 
 If I were to convert the home section "Jane Doe" with its job description "Senior Astral Projectionist" and photo into a React component, I would just cut and paste the code from `public/index.html` into a new file that I would create at `src/pages/Home.js`, I would also change all properties of `class=` into `className=` and I would end up with the following content:
 
@@ -46,7 +48,7 @@ export default function Home() {
     <article id="home" class="panel intro">
       <header>
         <h1>Jane Doe</h1>
-        <p>Senior Astral Projectionist</p>
+        <p>Senior Stellar Projectionist</p>
       </header>
       <a href="#work" class="jumplink pic">
         <span class="arrow icon solid fa-chevron-right">
@@ -81,7 +83,7 @@ export default function App() {
 
 I hope this make sense, if not, hit me on Slack or anywhere!
 
-Good luck!
+Now it's your turn, good luck!
 
 ## Notes:
 1. remember, these are actually compiled to function calls, i.e. `<div>Hello</div>` converts into `React.createElement('div', null, 'Hello')` so it's not exactly HTML. HTML will be the final output and that's handled by something called React DOM Renderer.
