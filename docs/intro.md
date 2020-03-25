@@ -2,7 +2,7 @@
 
 Hello! Let me guess, you are here because you've made something beautiful using static HTML & CSS and now you want to turn your site/app into a dynamic and interactive one, right?
 
-> From now on, we assume you are familiar with HTML & CSS because those are the foundation of web development. Reason is, it could get too confusing without knowing these first. Actually, this whole page might still be confusing to you, but hang in there, I promise it will eventually make sense and I'll do my best explaining it to you.
+> From now on, we assume you are familiar with HTML & CSS because those are the foundation of web development. The reason is, it could get too confusing without knowing these first. Actually, this whole page might still be confusing to you, but hang in there, I promise it will eventually make sense and I'll do my best explaining it to you.
 
 ## What is React then?
 
@@ -12,8 +12,8 @@ __React is a JavaScript library for building user interfaces.__ But in order to 
 
 ### Functions
 
-When we create applications of any size, we need tools that help us organise the code so we can [easily reason about](https://softwareengineering.stackexchange.com/questions/351244/easy-to-reason-about-what-does-that-mean) it as it grows.
-In this tutorial, we'll focus on __functions__ as one of the many tools that helps us organise code.
+When we create applications of any size, we need tools that help us organize the code so we can [easily reason about](https://softwareengineering.stackexchange.com/questions/351244/easy-to-reason-about-what-does-that-mean) it as it grows.
+In this tutorial, we'll focus on __functions__ as one of the many tools that help us organize code.
 
 Let's look at an example: 
 
@@ -24,7 +24,7 @@ __Imagine you want to restrict an action so__
 
 __can trigger it.__
 
-The code for such thing could look like the following:
+The code for such a thing could look like the following:
 
 _original:_
 ```javascript
@@ -48,7 +48,7 @@ function isAdult(user) {
 }
 ```
 
-Then, anywhere in our codebase we can re-use this function just by calling it with a user in hand:
+Then, anywhere in our codebase, we can re-use this function just by calling it with a user in hand:
 
 ```javascript
 if (isAdult(user)) {
@@ -56,11 +56,11 @@ if (isAdult(user)) {
 }
 ```
 
-Also, (and excuse the jargon) notice how we got rid of the side-effectful exception throwing, making our code more pure. Making our code pure like this also make it easy to reason about it later or for the new developers coming to work on our application.
+Also, (and excuse the jargon) notice how we got rid of the side-effect exception throwing, making our purer. Making our code pure like this also make it easy to reason about it later or for the new developers coming to work on our application.
 
 ---
 
-__Right, let's look at one more, a bit more complex example of a function composition.__
+__Right, let's look at one more, a bit more complex example of function composition.__
 
 ```javascript
 React.createElement(
@@ -77,13 +77,13 @@ React.createElement(
 );
 ```
 
-What can we say about this code? Well, there are two function calls within one function call. Each function receives two to three arguments and it seems like it has a nested structure. If we know what `React.createElement` does, we might have an idea what it does. But is it easy on the eyes? How long did it take you to figure out the function call flow? You know that the inner function call gets executed before the outer one, right? (And bare in mind, this one is still rather simple)
+What can we say about this code? Well, there are two function calls within one function call. Each function receives two to three arguments and it seems like it has a nested structure. If we know what `React.createElement` does, we might have an idea of what it does. But is it easy on the eyes? How long did it take you to figure out the function call flow? You know that the inner function call gets executed before the outer one, right? (And bear in mind, this one is still rather simple)
 
 ---
 
 ## This is where JXS comes in to play...
 
-You see, the good stuff about HTML is that it provides abstraction that is easy to read. It's a declarative way of describing a user interface. You can say something with a word that means something more complex so that when you markup content with a HTML tag it abstracts away and deals with all the technical details—no need to write a bunch of code.
+You see, the good stuff about HTML is that it provides an abstraction that is easy to read. It's a declarative way of describing a user interface. You can say something with a word that means something more complex so that when you markup content with an HTML tag it abstracts away and deals with all the technical details—no need to write a bunch of code.
 
 Based on that idea, guys at Facebook invented something called [XHP](https://www.facebook.com/notes/facebook-engineering/xhp-a-new-way-to-write-php/294003943919/) which was later used as an inspiration for JSX. So what is JSX?
 
@@ -104,7 +104,7 @@ JSX basically translates into function calls of `React.createElement`, so __Reac
 This way, JSX is more powerful than HTML because the underlying abstraction is "scheduled functions" (we actually call them __"Components"__). And this is the main principle of React. And do you remember I said you came here from the "static HTML" land? Well, components are dynamic, they can have state and something called React scheduler knows when to rerender, remove or add them to the DOM whenever the state changes. This is a big deal.
 
 _Description from the official React documentation:_
-> Components are often described as “just functions” but in our view they need to be more than that to be useful. In React, components describe any composable behavior, and this includes rendering, lifecycle, and state. Some external libraries like Relay augment components with other responsibilities such as describing data dependencies. It is possible that those ideas might make it back into React too in some form.
+> Components are often described as “just functions” but in our view, they need to be more than that to be useful. In React, components describe any composable behavior, and this includes rendering, lifecycle, and state. Some external libraries like Relay augment components with other responsibilities such as describing data dependencies. It is possible that those ideas might make it back into React too in some form.
 
 ---
 
@@ -156,8 +156,8 @@ _assignment no. x_
 Without me telling you what the code does (that's your job to figure out), we can already notice a few things:
 1. It is vanilla Javascript without any frameworks or abstractions.
 1. This code is very __imperative__ and imperative code is very prone to bugs and fragile to modifications.
-1. The behaviour is separated from the ui description, if we modify one side of it, we probably need to update the other one, too.
-1. It does not cleanup after the form is unmounted. Leaving listeners hanging and creating a memory leak.
+1. The behavior is separated from the UI description, if we modify one side of it, we probably need to update the other one, too.
+1. It does not clean up after the form is unmounted. Leaving listeners hanging and creating a memory leak.
 1. We have to manually manipulate the DOM whenever we want to change something.
 
 It's worth noting that even if we used jQuery, the code would have the same flaws.
@@ -218,12 +218,12 @@ Now, let's look at the same example but using React with the least amount of abs
 
 Here's what's happening:
 1. We create an empty `div` with id `"app"`
-1. We define a component named `Login` where we define the state, behaviour and the UI representation all together.
+1. We define a component named `Login` where we define the state, behavior and the UI representation altogether.
 1. We render the `Login` component into the div we created, so React will start its scheduler and keep track of any changes in that subtree.
-1. If we would unmount our component (not part of the code) with `ReactDOM.unmountComponentAtNode(document.getElementById("app"))`, React would cleanup all the attached listeners it has created automatically.
+1. If we would unmount our component (not part of the code) with `ReactDOM.unmountComponentAtNode(document.getElementById("app"))`, React would clean up all the attached listeners it has created automatically.
 1. The code is __declarative__ and easier to reason about. _(Declarative code is easier to understand thus we prefer declarative code over imperative. In fact, what is very common in React, is to wrap some imperative code with declarative component(s) - we will see an example of this at the end of the webinar.)_
 
-And this is it, this is React. I mean, there's more to it, but let's not put too much on our plate at the beginning. I like to think of React as "Lego for adults". Once you have the building blocks, it's very easy and fast to create application of any scale with it.
+And this is it, this is React. I mean, there's more to it, but let's not put too much on our plate at the beginning. I like to think of React as "Lego for adults". Once you have the building blocks, it's very easy and fast to create an application of any scale with it.
 
 If there is anything that doesn't make sense to you, please don't be afraid to ask questions.
 
