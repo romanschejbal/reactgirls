@@ -74,7 +74,7 @@ export default function App() {
   return (
     <div id="wrapper">
       <div id="main">
-        <HomePage /> {/* this is also new, also, notice how we write comments inside JSX - like this! */}
+        <Home /> {/* this is also new, also, notice how we write comments inside JSX - like this! */}
       </div>
     </div>
   );
@@ -83,7 +83,71 @@ export default function App() {
 
 I hope this make sense, if not, hit me on Slack or anywhere!
 
-Now it's your turn, good luck!
+Now it's your turn to convert the rest of the sections good luck!
+
+--- 
+
+Once you are done with converting all the sections into respective modules, you should endup with something like this.
+
+_`./src/App.js`_
+```jsx
+import React from "react";
+
+import Home from "./pages/Home"; 
+import Work from "./pages/Work"; 
+import Contact from "./pages/Contact";
+
+
+import "./styles/main.scss";
+
+export default function App() {
+
+  return (
+    <div id="wrapper">
+      <div id="main">
+        <Home /> 
+        <Work />
+        <Contact />
+      </div>
+    </div>
+  );
+}
+```
+
+This looks way cleaner than the previous long index.html file, doesn't it?
+
+### One more thing
+You will notice, that the site looks exactly the same as it used to, our goal though is to __hide the other sections so only one is active at any time__.
+
+We can, for now hard code it like so:
+
+_`./src/App.js`_
+```jsx
+import React from "react";
+
+import Home from "./pages/Home"; 
+import Work from "./pages/Work"; 
+import Contact from "./pages/Contact";
+
+
+import "./styles/main.scss";
+
+export default function App() {
+  const activeSection = "home";
+
+  return (
+    <div id="wrapper">
+      <div id="main">
+        {activeSection === "home" ? <Home /> : null}
+        {activeSection === "work" ? <Work /> : null}
+        {activeSection === "contact" ? <Contact /> : null}
+      </div>
+    </div>
+  );
+}
+```
+
+Right, now only one section should be active - we initialize the `activeSection` variable to `"home"` and then we ask whether is of a respective value or not and based on that we display the section or not. Very simple so far. It's hardcoded though, in the next lesson we'll see how we can make that value dynamic.
 
 ## Notes:
 1. remember, these are actually compiled to function calls, i.e. `<div>Hello</div>` converts into `React.createElement('div', null, 'Hello')` so it's not exactly HTML. HTML will be the final output and that's handled by something called React DOM Renderer.
