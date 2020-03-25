@@ -2,9 +2,9 @@
 
 Here's what we are going to do today:
 1. We will take an existing, static HTML & CSS website
-2. Turn it into a React based one and bring it to life a little bit
+2. Turn it into a React-based one and bring it to life a little bit
 
-You can then keep the website, tune it up or whatever.. Maybe even put it into production with a little extra help and make it your portfolio.
+You can then keep the website, tune it up or whatever. Maybe even put it into production with a little extra help and make it your portfolio.
 
 We are going to turn this:
 
@@ -14,7 +14,7 @@ Into this something more compelling for the eyes like this:
 
 ![react version](resources/react-page.png)
 
-Basically instead of one loooong page we'll have menu with icons at the top and a dynamic site that can update its content based on the state of the menu.
+Basically instead of one long page, we'll have a menu with icons at the top and a dynamic site that can update its content based on the state of the menu.
 
 ---
 
@@ -33,7 +33,7 @@ Can you tell why? Well, the reason why this wouldn't compile is that `class` is 
 <div className="heading">Hello World</div>
 ```
 
-With this knowledge, you can now head to the project at [Code Sandbox](#link-goes-here) and start converting parts from the `public/index.html` file into React components. You should think through how you want to divide them, what is the granularity going to be like and so on. But don't worry, you can update and iterate on it while doing so. I have marked the code you need to convert with html comments `<!-- THIS IS THE CODE YOU WANT TO CONVERT INTO REACT -->` and `<!-- DONT REMOVE THE CLOSING BODY & HTML TAGS -->`
+With this knowledge, you can now head to the project at [Code Sandbox](#link-goes-here) and start converting parts from the `public/index.html` file into React components. You should think through how you want to divide them, what is the granularity going to be like and so on. But don't worry, you can update and iterate on it while doing so. I have marked the code you need to convert with HTML comments `<!-- THIS IS THE CODE YOU WANT TO CONVERT INTO REACT -->` and `<!-- DONT REMOVE THE CLOSING BODY & HTML TAGS -->`
 
 ### Here's a quick hint for you:
 
@@ -42,7 +42,7 @@ If I were to convert the home section "Jane Doe" with its job description "Senio
 ```jsx
 import React from 'react'; // we need to import React whenever we want to use JSX, because <div /> actually compiles to React.createElement('div') thus React needs to be in the scope of our code
 
-// we need to export our function / component so we can import it somewhere else, we export it under the default 
+// we need to export our function/component so we can import it somewhere else, we export it under the default 
 export default function Home() {
   return (
     <article id="home" className="panel intro">
@@ -81,13 +81,13 @@ export default function App() {
 }
 ```
 
-I hope this make sense, if not, hit me on Slack or anywhere!
+I hope this makes sense, if not, hit me on Slack or anywhere!
 
 Now it's your turn to convert the rest of the sections good luck!
 
 --- 
 
-Once you are done with converting all the sections into respective modules, you should endup with something like this.
+Once you are done with converting all the sections into respective modules, you should end up with something like this.
 
 _`./src/App.js`_
 ```jsx
@@ -119,7 +119,7 @@ This looks way cleaner than the previous long index.html file, doesn't it?
 ### One more thing
 You will notice, that the site looks exactly the same as it used to, our goal though is to __hide the other sections so only one is active at any time__.
 
-We can, for now hard code it like so:
+We can, for now, hard code it like so:
 
 _`./src/App.js`_
 ```jsx
