@@ -1,10 +1,10 @@
 # State
 
-So our app is now written using React. But it's still not very interactive, is it. In this task we learn about how state is managed within React apps.
+So our app is now written using React. But it's still not very interactive, is it? In this lesson, we learn about how the state is managed within React apps.
 
-What is state you ask? Well, that's a mounthful question. For this lesson, I'm just going to say that state is something that can change when user interacts with our app, something that's not hardcoded like we did in [lesson 1](./lesson1.md).
+What is a state you ask? Well, that's a mouthful question. For this lesson, I'm just going to say that state is something that can change when a user interacts with our app, something that's not hardcoded as we did in [lesson 1](./lesson1.md).
 
-Quick note before we jump in: There is one more way to manage state, using classes but we won't be covering that because the industry is now shifting towards the hooks way anyway.
+A quick note before we jump in: There is one more way to manage state, using classes but we won't be covering that because the industry is now shifting towards the hooks way anyway.
 
 ## Hooks
 
@@ -55,7 +55,7 @@ export default function App() {
 }
 ```
 
-Basicaly a bunch of links, with some icons. The thing I want you to notice is how we conditionally add the `"active"` to the `className` property whenever one of the sections is active.
+Basically a bunch of links, with some icons. The thing I want you to notice is how we conditionally add the `"active"` to the `className` property whenever one of the sections is active.
 
 ---
 
@@ -86,9 +86,9 @@ Now, can you make the other links functional, too? It should be fairly straight 
 
 ## What is this magic?
 
-Do you remember I said something about components being more than functions? And do you remember I mentioned they are scheduled by React scheduler?
+Do you remember I said something about components being more than functions? And do you remember I mentioned they are scheduled by the React scheduler?
 
-Well, React knows when it's rendering our component and it _swaps_ the `useState` hook for one that's _bound to the component fiber_. What is fiber? Fiber is a structure that represents the component and how it is stored in memory, with it's state, effects and what not.
+Well, React knows when it's rendering our component and it _swaps_ the `useState` hook for one that's _bound to the component fiber_. What is fiber? Fiber is a structure that represents the component and how it is stored in memory, with its state, effects and whatnot.
 
 Don't worry though, you don't have to know all these details and in fact, many professional React developers don't! That's what's nice about React. In a way, it does so much for us so it's easy and simple to develop complex apps with it. And it doesn't ask us to know all the in and outs of it's working, they can be useful though.
 
