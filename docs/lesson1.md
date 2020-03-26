@@ -33,7 +33,7 @@ Can you tell why? Well, the reason why this wouldn't compile is that `class` is 
 <div className="heading">Hello World</div>
 ```
 
-With this knowledge, you can now head to the project at [Code Sandbox](#link-goes-here) and start converting parts from the `public/index.html` file into React components. You should think through how you want to divide them, what is the granularity going to be like and so on. But don't worry, you can update and iterate on it while doing so. I have marked the code you need to convert with HTML comments `<!-- THIS IS THE CODE YOU WANT TO CONVERT INTO REACT -->` and `<!-- DONT REMOVE THE CLOSING BODY & HTML TAGS -->`
+With this knowledge, you can now head to the project at [Code Sandbox](https://codesandbox.io/s/react-girls-webinar-6mg0j) and start converting parts from the `public/index.html` file into React components. You should think through how you want to divide them, what is the granularity going to be like and so on. But don't worry, you can update and iterate on it while doing so. I have marked the code you need to convert with HTML comments `<!-- THIS IS THE CODE YOU WANT TO CONVERT INTO REACT -->` and `<!-- DONT REMOVE THE CLOSING BODY & HTML TAGS -->`
 
 ### Here's a quick hint for you:
 
